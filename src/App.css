@@ -15,5 +15,9 @@ html {
 
 .App-intro {
   font-size: large;
+} 
+
+.col-md-5 { 
+  padding: 5px;
 }
 

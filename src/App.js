@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.css'; 
+import {FindPersonForm} from './Components/FindPersonForm'
 
 class App extends Component {
   render() {
@@ -9,7 +10,8 @@ class App extends Component {
         <h1 className="App-title">RateYourAcquaintance</h1>
         <p className="App-intro"> 
         The day of Reckoning has come!
-        </p>
+        </p> 
+        <FindPersonForm />
       </div>
     );
   }
