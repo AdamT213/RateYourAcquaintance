@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {findPerson} from './Actions/personActions'
 
 export class FindPersonForm extends Component {
 
@@ -17,7 +17,9 @@ export class FindPersonForm extends Component {
     });
   }
 
-  handleOnSubmit = event => {
+  handleOnSubmit = event => { 
+    const person = Object.assign({}, this.state);
+    this.props.findPerson(person);
     this.setState({
       name: '',
     });
@@ -58,3 +60,5 @@ export class FindPersonForm extends Component {
     );
   }
 }
+
+export default connect(null,{ findPerson })(FindPersonForm)
