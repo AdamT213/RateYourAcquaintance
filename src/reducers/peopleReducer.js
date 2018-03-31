@@ -1,4 +1,3 @@
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 
 export function peopleReducer(state = {loading: false, person: {}, action) {
   switch (action.type) {
