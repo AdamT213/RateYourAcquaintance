@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { showPerson } from '../actions/personActions'; 
-import { AddPersonForm } from './AddPersonForm'
+import { AddPersonForm } from './AddPersonForm' 
+import { FormattedPerson } from './FormattedPerson'
 import {
   BrowserRouter as Router,
   Route,
