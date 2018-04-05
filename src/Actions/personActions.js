@@ -9,4 +9,21 @@ export function findPerson(person){
      }).then(responseJson => {
        dispatch({type: 'GET_PERSON', payload: responseJson})
    })
- }
+ } 
+} 
+
+export function addPerson(person){ 
+  return function(dispatch){
+    dispatch({type: 'ADD_PERSON'})
+    return fetch('https://rateyouracquaintanceapi.herokuapp.com/people', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(person),
+    }).then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', response));
+  } 
+} 
