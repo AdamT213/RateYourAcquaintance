@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { showPerson } from '../actions/personActions'; 
 import { AddPersonForm } from './AddPersonForm' 
 import { FormattedPerson } from './FormattedPerson'
 import {
@@ -17,11 +16,6 @@ export class Person extends Component {
     super(props) 
     }
     
-    componentWillMount = event => {
-        event.preventDefault();
-        this.props.showPerson(person);
-    }
-//make presentational component for formatting person 
 //figure out how to work with redirects
   render() { 
     if (this.state.person !== {}) { 

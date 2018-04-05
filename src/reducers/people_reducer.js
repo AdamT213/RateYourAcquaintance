@@ -1,5 +1,5 @@
 
-export function peopleReducer(state = {loading: false, person: {}, action) {
+export function peopleReducer(state = {loading: false, person: {}, action}) {
   switch (action.type) {
 
      case 'GET_PERSON': 
