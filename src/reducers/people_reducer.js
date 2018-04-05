@@ -10,7 +10,10 @@ export function peopleReducer(state = {loading: false, person: {}, action}) {
      } else { 
       return state;
      }
-    default:
-      return state;
+      case 'ADD_PERSON': 
+      let currentPerson = action.payload 
+       return {loading: false, person: currentPerson}; 
+     default:
+       return state; 
   }
 } 
