@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { showPerson } from '../actions/personActions'; 
+import { AddPersonForm } from './AddPersonForm'
 import {
   BrowserRouter as Router,
   Route,
@@ -30,14 +31,10 @@ export class Person extends Component {
       ); 
     } else { 
       return ( 
-            <Route
-           <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: props.location }
-              }}
-            />
-          />
+        <Switch>
+          <Redirect to='/add-person'/>
+          <Route path='/add-person' component={AddPersonForm}/>
+        </Switch> 
       )
     }
   }
