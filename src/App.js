@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css'; 
-import FindPersonForm from './Components/FindPersonForm';
+import FindPersonForm from './Components/FindPersonForm'; 
+
 
 class App extends Component {
   render() {

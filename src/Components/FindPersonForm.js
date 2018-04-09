@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { findPerson } from '../Actions/personActions';
 
 export class FindPersonForm extends Component {
@@ -63,4 +62,4 @@ export class FindPersonForm extends Component {
   }
 }
 
-export default connect(null,{ findPerson })(FindPersonForm)
+export default connect(null, { findPerson })(FindPersonForm);

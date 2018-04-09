@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'; 
+import { bindActionCreators } from 'redux';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import { addPerson } from '../actions/personActions';
+import { addPerson } from '../Actions/personActions';
 
 export class AddPersonForm extends Component {
 
