@@ -1,6 +1,13 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
-import { findPerson } from '../Actions/personActions';
+import { findPerson } from '../Actions/personActions'; 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 
 export class FindPersonForm extends Component {
 
@@ -34,10 +41,9 @@ export class FindPersonForm extends Component {
       <Switch>
         <Redirect to="/person-show"/>
         <Route path='/person-show' component={Person}/>
-      </Switch>
+      </Switch> 
       ) 
-    } 
-    else { 
+    } else {
     return (
       <div className= "App">
       <div className="container">
@@ -71,6 +77,7 @@ export class FindPersonForm extends Component {
       </div>
     );
   }
+} 
 }
 
 export default connect(null, { findPerson })(FindPersonForm);
