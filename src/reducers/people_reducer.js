@@ -1,5 +1,5 @@
 
-export function peopleReducer(state = {loading: false, person: {}, action}) {
+export function peopleReducer(state = {loading: false, person: {}}, action) {
   switch (action.type) {
 
      case 'GET_PERSON': 
@@ -11,7 +11,7 @@ export function peopleReducer(state = {loading: false, person: {}, action}) {
       return state;
      }
       case 'ADD_PERSON': 
-      let currentPerson = action.payload 
+        currentPerson = action.payload 
        return {loading: false, person: currentPerson}; 
      default:
        return state; 
