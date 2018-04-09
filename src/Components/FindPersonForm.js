@@ -7,7 +7,8 @@ export class FindPersonForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: '',
+      name: '', 
+      fireRedirect: false,
     }
   }
 
@@ -22,11 +23,21 @@ export class FindPersonForm extends Component {
     const person = Object.assign({}, this.state);
     this.props.findPerson(person);
     this.setState({
-      name: '',
+      name: '', 
+      fireRedirect: true,
     });
   }
 
-  render() {
+  render() { 
+    if (this.state.fireRedirect) {
+      return (
+      <Switch>
+        <Redirect to="/person-show"/>
+        <Route path='/person-show' component={Person}/>
+      </Switch>
+      ) 
+    } 
+    else { 
     return (
       <div className= "App">
       <div className="container">
