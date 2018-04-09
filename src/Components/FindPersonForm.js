@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
-import { findPerson } from '../Actions/personActions'; 
+import { findPerson } from '../Actions/personActions';  
+import { Person } from './Person'
 import {
   BrowserRouter as Router,
   Route,
@@ -38,10 +39,12 @@ export class FindPersonForm extends Component {
   render() { 
     if (this.state.fireRedirect) {
       return (
-      <Switch>
+      <Router> 
+      <div>
         <Redirect to="/person-show"/>
         <Route path='/person-show' component={Person}/>
-      </Switch> 
+      </div>
+      </Router> 
       ) 
     } else {
     return (

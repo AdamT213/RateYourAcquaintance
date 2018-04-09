@@ -26,10 +26,12 @@ export class Person extends Component {
       ); 
     } else { 
       return ( 
-        <Switch>
+        <Router>
+        <div>
           <Redirect to='/add-person'/>
-          <Route path='/add-person' component={AddPersonForm}/>
-        </Switch> 
+          <Route path='/add-person' component={AddPersonForm}/> 
+        </div>
+        </Router> 
       )
     }
   }
@@ -39,4 +41,4 @@ function mapStateToProps(state){
   return {person: state.peopleReducer.person}
 }
 
-export default connect(mapStateToProps, { showPerson })(Person);
+export default connect(mapStateToProps, null )(Person);
