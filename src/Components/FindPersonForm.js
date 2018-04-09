@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import {findPerson} from './Actions/personActions'
+import React, { Component } from 'react'; 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { findPerson } from '../Actions/personActions';
 
 export class FindPersonForm extends Component {
 
