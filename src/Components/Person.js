@@ -12,13 +12,10 @@ import {
 
 
 export class Person extends Component { 
-    constructor(props) {
-    super(props) 
-    }
-    
+     
 //figure out how to work with redirects
   render() { 
-    if (this.state.person !== {}) { 
+    if (this.props.person !== undefined) { 
       return (
         <div className= "App"> 
           {FormattedPerson} 
@@ -37,7 +34,8 @@ export class Person extends Component {
   }
 } 
 
-function mapStateToProps(state){
+function mapStateToProps(state){ 
+  debugger;
   return {person: state.peopleReducer.person}
 }
 

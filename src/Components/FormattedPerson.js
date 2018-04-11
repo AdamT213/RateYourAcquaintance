@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import Review from './Review';
 
-class FormattedPerson extends Component {  
+export class FormattedPerson extends Component {  
     
   render() { 
 
