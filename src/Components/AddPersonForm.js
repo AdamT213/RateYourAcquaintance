@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
-import { bindActionCreators } from 'redux';
 import {
   BrowserRouter as Router,
   Route,
@@ -8,7 +7,9 @@ import {
   Redirect,
   withRouter
 } from "react-router-dom";
-import { addPerson } from '../Actions/personActions';
+import { addPerson } from '../Actions/personActions'; 
+import { Person } from './Person'
+
 
 export class AddPersonForm extends Component {
   
@@ -29,8 +30,7 @@ export class AddPersonForm extends Component {
     });
   }
 
-  handleOnSubmit = event => {
-    event.preventDefault();
+  handleOnSubmit = event => { 
     const person = Object.assign({}, this.state);
     this.props.addPerson(person);
     this.setState({
@@ -41,9 +41,11 @@ export class AddPersonForm extends Component {
     });
   }
 
-  render() { 
-    
+  componentDidMount() {
     alert("The person you are searching for does not yet exist in our system. Please add their name, a physical description, and their city, state, and zip code.")
+ }
+
+  render() { 
 
     if (this.state.fireRedirect) {
       return (
