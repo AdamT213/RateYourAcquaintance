@@ -7,7 +7,7 @@ export function findPerson(person){
      .then(res => {
        return res.json()
      }).then(responseJson => {
-       dispatch({type: 'GET_PERSON', payload: responseJson})
+       dispatch({type: 'GET_PERSON', payload: [responseJson, person]})
    })
  } 
 } 
