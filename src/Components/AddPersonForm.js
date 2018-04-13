@@ -103,7 +103,6 @@ export class AddPersonForm extends Component {
       ); 
     }
   }
-} 
 
 
 export default connect(null, { addPerson })(AddPersonForm);

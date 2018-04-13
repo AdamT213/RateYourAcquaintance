@@ -70,6 +70,5 @@ export class FindPersonForm extends Component {
       );
   }
 } 
-}
 
 export default connect(null, { findPerson })(FindPersonForm);

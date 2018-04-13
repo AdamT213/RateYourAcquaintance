@@ -4,13 +4,14 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose } from 'redux'
 import createHistory from 'history/createBrowserHistory'
 import { Route } from 'react-router'
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import { ConnectedRouter, routerMiddleware, push } from 'react-router-redux'
 import { browserHistory } from 'react-router' 
 import thunk from 'redux-thunk';
 import './index.css';
 import rootReducer from './reducers';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import Person from './Components/Person'
 
 const history = createHistory() 
 
@@ -25,16 +26,15 @@ export const store = createStore(
 )
 
 
-ReactDOM.render(
+ReactDOM.render( 
 <Provider store={store}> 
     <ConnectedRouter history={history}>
       <div>
-        {/* <Route exact path="/" component={Home}/> */}
         <Route path='/person-show' component={Person}/>
       </div>
     </ConnectedRouter>
     <App />
-</Provider>,
+</Provider>, 
 document.getElementById('root'));
 
 registerServiceWorker();
