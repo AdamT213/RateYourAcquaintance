@@ -13,7 +13,6 @@ import {
 
 export class Person extends Component { 
      
-//figure out how to work with redirects
   render() { 
     if (this.props.person !== undefined) { 
       return (
