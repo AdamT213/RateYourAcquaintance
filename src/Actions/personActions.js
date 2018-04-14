@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch';
 import history from '../history';
 
 export function findPerson(person){ 
+  debugger;
   return function(dispatch){
    dispatch({type: 'LOADING_PEOPLE'})
    return fetch('https://rateyouracquaintanceapi.herokuapp.com/people')
