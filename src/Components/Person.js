@@ -8,33 +8,35 @@ import {
   Link,
   Redirect,
   withRouter
-} from "react-router-dom";
+} from "react-router-dom"; 
+import { push } from 'react-router-redux'
 
 
 export class Person extends Component { 
      
   render() { 
-    if (this.props.person !== undefined) { 
+    debugger;
+    if (this.props.person !== {}) { 
       return (
         <div className= "App"> 
-          {FormattedPerson} 
+          {FormattedPerson}
         </div>
       ); 
     } else { 
-      return ( 
-        <Router>
-        <div>
-          <Redirect to='/add-person'/>
-          <Route path='/add-person' component={AddPersonForm}/> 
-        </div>
-        </Router> 
+      return (  
+        this.store.dispatch(push('/add-person'))
+        // <Router>
+        // <div>
+        //   <Redirect to='/add-person'/>
+        //   <Route path='/add-person' component={AddPersonForm}/> 
+        // </div>
+        // </Router> 
       )
     }
   }
 } 
 
 function mapStateToProps(state){ 
-  debugger;
   return {person: state.peopleReducer.person}
 }
 

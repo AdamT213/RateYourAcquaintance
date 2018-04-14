@@ -1,7 +1,8 @@
 import fetch from 'isomorphic-fetch' 
 import { push } from 'react-router-redux'
 
-export function findPerson(person){ 
+export function findPerson(person){  
+  debugger;
   return function(dispatch){
    dispatch({type: 'LOADING_PEOPLE'})
    return fetch('https://rateyouracquaintanceapi.herokuapp.com/people')
