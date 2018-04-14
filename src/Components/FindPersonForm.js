@@ -16,7 +16,7 @@ export class FindPersonForm extends Component {
     super(props)
     this.state = {
       name: '', 
-      fireRedirect: false,
+      //fireRedirect: false,
     }
   }
 
@@ -32,22 +32,22 @@ export class FindPersonForm extends Component {
     this.props.findPerson(person);
     this.setState({
       name: '', 
-      fireRedirect: true,
+      //fireRedirect: true,
     });
   }
 
   render() { 
 
-    if (this.state.fireRedirect) {
-      return (
-        <Router> 
-        <div>
-          <Redirect to="/person-show"/>
-          <Route path='/person-show' component={Person}/>
-        </div>
-        </Router> 
-      ) 
-    } else {
+    // if (this.state.fireRedirect) {
+    //   return (
+    //     <Router> 
+    //     <div>
+    //       <Redirect to="/person-show"/>
+    //       <Route path='/person-show' component={Person}/>
+    //     </div>
+    //     </Router> 
+    //   ) 
+    // } else {
       
       return (
         <div className= "App">
@@ -83,6 +83,6 @@ export class FindPersonForm extends Component {
       );
   }
 } 
-}
+// }
 
 export default connect(null, { findPerson })(FindPersonForm);

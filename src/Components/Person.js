@@ -14,7 +14,8 @@ import {
 export class Person extends Component { 
      
   render() { 
-    if (this.props.person !== undefined) { 
+    debugger;
+    if (this.props.person !== {}) { 
       return (
         <div className= "App"> 
           {FormattedPerson} 
@@ -24,7 +25,7 @@ export class Person extends Component {
       return ( 
         <Router>
         <div>
-          <Redirect to='/add-person'/>
+          <Redirect from= '/person-show' to='/add-person'/>
           <Route path='/add-person' component={AddPersonForm}/> 
         </div>
         </Router> 
@@ -34,7 +35,6 @@ export class Person extends Component {
 } 
 
 function mapStateToProps(state){ 
-  debugger;
   return {person: state.peopleReducer.person}
 }
 

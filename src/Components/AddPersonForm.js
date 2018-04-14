@@ -19,7 +19,7 @@ export class AddPersonForm extends Component {
       name: '',
       description: '',
       location:'', 
-      fireRedirect: false,
+      // fireRedirect: false,
     }
   }
 
@@ -37,7 +37,7 @@ export class AddPersonForm extends Component {
       name: '',
       description: '',
       location:'', 
-      fireRedirect: true,
+      // fireRedirect: true,
     });
   }
 
@@ -47,16 +47,16 @@ export class AddPersonForm extends Component {
 
   render() { 
 
-    if (this.state.fireRedirect) {
-      return (
-        <Router> 
-        <div>
-          <Redirect to="/person-show"/>
-          <Route path='/person-show' component={Person}/>
-        </div>
-        </Router> 
-      ) 
-    } else {
+    // if (this.state.fireRedirect) {
+    //   return (
+    //     <Router> 
+    //     <div>
+    //       <Redirect to="/person-show"/>
+    //       <Route path='/person-show' component={Person}/>
+    //     </div>
+    //     </Router> 
+    //   ) 
+    // } else {
     
       return (
         <div className= "App">
@@ -116,7 +116,7 @@ export class AddPersonForm extends Component {
       ); 
     }
   }
-} 
+// } 
 
 
 export default connect(null, { addPerson })(AddPersonForm);
