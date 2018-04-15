@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom'; 
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose } from 'redux'
-//import { browserHistory } from 'react-router'
+// import { browserHistory } from 'react-router'
 import { Router, Route } from 'react-router-dom';
 import thunk from 'redux-thunk';
 import './index.css';
@@ -25,7 +25,7 @@ export const store = createStore(
 
 ReactDOM.render(
 <Provider store={store}> 
-   <Router history={history}> 
+   <Router history= {history}> 
    <div> 
    <Route path='/person-show' component={Person}/> 
    <Route path='/add-person' component={AddPersonForm}/>

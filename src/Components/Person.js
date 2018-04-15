@@ -35,6 +35,7 @@ export class Person extends Component {
 } 
 
 function mapStateToProps(state){ 
+  debugger;
   return {person: state.peopleReducer.person}
 }
 

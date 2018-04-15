@@ -29,7 +29,8 @@ export class FindPersonForm extends Component {
 
   handleOnSubmit = event => { 
     const person = Object.assign({}, this.state);
-    this.props.findPerson(person);
+    this.props.findPerson(person); 
+    this.props.history.push('/person-show')
     this.setState({
       name: '', 
       //fireRedirect: true,
@@ -85,4 +86,4 @@ export class FindPersonForm extends Component {
 } 
 // }
 
-export default connect(null, { findPerson })(FindPersonForm);
+export default withRouter(connect(null, { findPerson })(FindPersonForm));
