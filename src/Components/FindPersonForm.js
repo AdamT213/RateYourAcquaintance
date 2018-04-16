@@ -73,4 +73,4 @@ export class FindPersonForm extends Component {
   }
 } 
 
-export default withRouter(connect(null, { findPerson })(FindPersonForm));
+export default connect(null, { findPerson })(FindPersonForm);

@@ -17,17 +17,15 @@ export class Person extends Component {
     debugger;
     if (this.props.person !== "unfound") { 
       return (
-        <div className= "App"> 
+        <div> 
           {FormattedPerson} 
         </div>
       ); 
     } else { 
       return ( 
-        <Router>
-        <div>
-          <Redirect from= '/person-show' to='/add-person'/> 
+        <div> 
+          {this.props.history.push('/add-person')}
         </div>
-        </Router> 
       )
     }
   }

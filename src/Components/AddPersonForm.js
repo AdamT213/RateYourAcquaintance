@@ -19,7 +19,6 @@ export class AddPersonForm extends Component {
       name: '',
       description: '',
       location:'', 
-      // fireRedirect: false,
     }
   }
 
@@ -32,12 +31,12 @@ export class AddPersonForm extends Component {
 
   handleOnSubmit = event => { 
     const person = Object.assign({}, this.state);
-    this.props.addPerson(person);
+    this.props.addPerson(person); 
+    this.props.history.push('/person-show')
     this.setState({
       name: '',
       description: '',
       location:'', 
-      // fireRedirect: true,
     });
   }
 
@@ -47,17 +46,6 @@ export class AddPersonForm extends Component {
 
   render() { 
 
-    // if (this.state.fireRedirect) {
-    //   return (
-    //     <Router> 
-    //     <div>
-    //       <Redirect to="/person-show"/>
-    //       <Route path='/person-show' component={Person}/>
-    //     </div>
-    //     </Router> 
-    //   ) 
-    // } else {
-    
       return (
         <div className= "App">
         <div className="container">
@@ -116,7 +104,6 @@ export class AddPersonForm extends Component {
       ); 
     }
   }
-// } 
 
 
 export default connect(null, { addPerson })(AddPersonForm);
