@@ -15,7 +15,7 @@ export class Person extends Component {
      
   render() { 
     debugger;
-    if (this.props.person !== {}) { 
+    if (this.props.person !== "unfound") { 
       return (
         <div className= "App"> 
           {FormattedPerson} 
@@ -25,8 +25,7 @@ export class Person extends Component {
       return ( 
         <Router>
         <div>
-          <Redirect from= '/person-show' to='/add-person'/>
-          <Route path='/add-person' component={AddPersonForm}/> 
+          <Redirect from= '/person-show' to='/add-person'/> 
         </div>
         </Router> 
       )

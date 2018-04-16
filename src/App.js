@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import './App.css'; 
+import { Router, Route } from 'react-router-dom';
 import FindPersonForm from './Components/FindPersonForm'; 
+import AddPersonForm  from './Components/AddPersonForm'; 
+import Person from './Components/Person'; 
+
+import createBrowserHistory from 'history/createBrowserHistory';
+const history = createBrowserHistory();
 
 
 class App extends Component {
@@ -11,7 +17,13 @@ class App extends Component {
         <p className="App-intro"> 
         The day of Reckoning has come!
         </p> 
-        <FindPersonForm />
+        <Router history= {history}> 
+          <div> 
+            <Route exact path='/' component={FindPersonForm}/> 
+            <Route path='/person-show' component={Person}/> 
+            <Route path='/add-person' component={AddPersonForm}/>
+          </div>
+        </Router>
       </div>
     );
   }

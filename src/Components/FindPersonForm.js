@@ -16,7 +16,6 @@ export class FindPersonForm extends Component {
     super(props)
     this.state = {
       name: '', 
-      //fireRedirect: false,
     }
   }
 
@@ -28,27 +27,16 @@ export class FindPersonForm extends Component {
   }
 
   handleOnSubmit = event => { 
+    event.preventDefault();
     const person = Object.assign({}, this.state);
     this.props.findPerson(person); 
     this.props.history.push('/person-show')
     this.setState({
       name: '', 
-      //fireRedirect: true,
     });
   }
 
   render() { 
-
-    // if (this.state.fireRedirect) {
-    //   return (
-    //     <Router> 
-    //     <div>
-    //       <Redirect to="/person-show"/>
-    //       <Route path='/person-show' component={Person}/>
-    //     </div>
-    //     </Router> 
-    //   ) 
-    // } else {
       
       return (
         <div className= "App">
@@ -84,6 +72,5 @@ export class FindPersonForm extends Component {
       );
   }
 } 
-// }
 
 export default withRouter(connect(null, { findPerson })(FindPersonForm));

@@ -8,7 +8,7 @@ export function peopleReducer(state = {loading: false, person: {}}, action) {
      if (currentPerson != undefined) { 
       return {loading: false, person: currentPerson}; 
      } else { 
-      return state;
+      return {loading: false, person: "unfound"}; 
      }
       case 'ADD_PERSON': 
         currentPerson = action.payload 

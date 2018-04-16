@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-fetch';
-//import history from '../history';
 
 export function findPerson(person){ 
   debugger;
@@ -9,10 +8,8 @@ export function findPerson(person){
      .then(res => {
        return res.json()
      }).then(responseJson => {
-       dispatch({type: 'GET_PERSON', payload: [responseJson, person]})
-  //  }).then(res => {
-  //   this.context.history.push('/person-show') 
-   })
+       dispatch({type: 'GET_PERSON', payload: [responseJson, person]}) 
+     })
  } 
 } 
 
@@ -26,8 +23,5 @@ export function addPerson(person){
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(person)})
-    // }).then(res => { 
-    //   history.push('/person-show')
-    // })
   } 
 } 
