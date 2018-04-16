@@ -15,7 +15,8 @@ export class AddPersonForm extends Component {
   
   constructor(props) {
     super(props)
-    this.state = {
+    this.state = { 
+      //initialize name to value that was just searched for to make UI cleaner
       name: '',
       description: '',
       location:'', 

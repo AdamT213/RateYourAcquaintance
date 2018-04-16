@@ -8,6 +8,7 @@ import Person from './Components/Person';
 import createBrowserHistory from 'history/createBrowserHistory';
 const history = createBrowserHistory();
 
+// add navbar with link to homepage for easier testing/debugging. debating use of navbar in production, and what links it should have
 
 class App extends Component {
   render() {
@@ -21,7 +22,7 @@ class App extends Component {
           <div> 
             <Route exact path='/' component={FindPersonForm}/> 
             <Route path='/person-show' component={Person}/> 
-            <Route path='/add-person' component={AddPersonForm}/>
+            <Route path='/add-person' component={AddPersonForm}/> 
           </div>
         </Router>
       </div>
