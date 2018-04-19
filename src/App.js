@@ -4,11 +4,11 @@ import { Router, Route } from 'react-router-dom';
 import FindPersonForm from './Inputs/FindPersonForm'; 
 import AddPersonForm  from './Inputs/AddPersonForm'; 
 import Person from './Components/Person'; 
+import Navbar from './Components/Navbar';
 
 import createBrowserHistory from 'history/createBrowserHistory';
 const history = createBrowserHistory();
 
-// add navbar with link to homepage for easier testing/debugging. debating use of navbar in production, and what links it should have
 
 class App extends Component {
   render() {
@@ -20,6 +20,7 @@ class App extends Component {
         </p> 
         <Router history= {history}> 
           <div> 
+            <Navbar />
             <Route exact path='/' component={FindPersonForm}/> 
             <Route path='/person-show' component={Person}/> 
             <Route path='/add-person' component={AddPersonForm}/> 

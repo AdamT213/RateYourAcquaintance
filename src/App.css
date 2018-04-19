@@ -19,5 +19,10 @@ html {
 
 .col-md-5 { 
   padding: 5px;
+} 
+
+.navbar .link {
+  padding-left:10px;
+  padding-right:10px;
 }
 
