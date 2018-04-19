@@ -1,5 +1,5 @@
 
-export function peopleReducer(state = {loading: false, person: {}}, action) {
+export function peopleReducer(state = {loading: false, person: "unfound"}, action) {
   switch (action.type) {
 
      case 'GET_PERSON': 
@@ -7,7 +7,7 @@ export function peopleReducer(state = {loading: false, person: {}}, action) {
      if (currentPerson != undefined) { 
       return {loading: false, person: currentPerson}; 
      } else { 
-      return {loading: false, person: "unfound"}; 
+      return state 
      }
       case 'ADD_PERSON': 
         currentPerson = action.payload 

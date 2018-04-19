@@ -8,19 +8,22 @@ import {
   Link,
   Redirect,
   withRouter
-} from "react-router-dom";
-
+} from "react-router-dom"; 
 
 export class Person extends Component { 
      
   render() { 
+
     if (this.props.person !== "unfound") { 
+
       return (
         <div> 
           {FormattedPerson} 
         </div>
       ); 
+
     } else { 
+      
       return ( 
         <div> 
           {this.props.history.push('/add-person')}
@@ -34,4 +37,4 @@ function mapStateToProps(state){
   return {person: state.peopleReducer.person}
 }
 
-export default connect(mapStateToProps, null )(Person); 
+export default connect(mapStateToProps, null)(Person); 
