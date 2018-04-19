@@ -29,11 +29,9 @@ export class Person extends Component {
       )
 
     } else { 
-
+      
       return (
-        <div> 
-          {FormattedPerson} 
-        </div>
+        <FormattedPerson name= {this.props.person.name} description= {this.props.person.description} location= {this.props.person.location} reviews= {this.props.person.reviews} />
       ); 
     }
   }
