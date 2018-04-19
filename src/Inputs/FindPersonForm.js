@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
 import { findPerson } from '../Actions/personActions';  
-import { Person } from './Person'
+import { Person } from '../Components/Person'
 import {
   BrowserRouter as Router,
   Route,

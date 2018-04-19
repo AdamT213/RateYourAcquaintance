@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { AddPersonForm } from './AddPersonForm' 
-import { FormattedPerson } from './FormattedPerson'
+import { AddPersonForm } from '../Inputs/AddPersonForm' 
+import { FormattedPerson } from '../Presentational/FormattedPerson'
 import {
   BrowserRouter as Router,
   Route,
@@ -34,4 +34,4 @@ function mapStateToProps(state){
   return {person: state.peopleReducer.person}
 }
 
-export default connect(mapStateToProps, null )(Person);
+export default connect(mapStateToProps, null )(Person); 

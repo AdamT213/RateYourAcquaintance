@@ -8,7 +8,7 @@ import {
   withRouter
 } from "react-router-dom";
 import { addPerson } from '../Actions/personActions'; 
-import { Person } from './Person'
+import { Person } from '../Components/Person'
 
 
 export class AddPersonForm extends Component {
