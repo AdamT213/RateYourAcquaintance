@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { AddPersonForm } from '../Inputs/AddPersonForm' 
-import { FormattedPerson } from '../Presentational/FormattedPerson'
+import { AddPersonForm } from '../Inputs/AddPersonForm';
+import { FormattedPerson } from '../Presentational/FormattedPerson';
+import Loader from 'react-loader';
 import {
   BrowserRouter as Router,
   Route,
@@ -14,27 +15,32 @@ export class Person extends Component {
      
   render() { 
 
-    if (this.props.person !== "unfound") { 
+    if (this.props.loading) { 
+      return (
+        <Loader />
+      )
+    }
+
+    if (this.props.person == "unfound") { 
+      return ( 
+        <div> 
+          {this.props.history.push('/add-person')}
+        </div>
+      )
+
+    } else { 
 
       return (
         <div> 
           {FormattedPerson} 
         </div>
       ); 
-
-    } else { 
-      
-      return ( 
-        <div> 
-          {this.props.history.push('/add-person')}
-        </div>
-      )
     }
   }
 } 
 
 function mapStateToProps(state){ 
-  return {person: state.peopleReducer.person}
+  return {person: state.peopleReducer.person, loading: state.peopleReducer.loading}
 }
 
 export default connect(mapStateToProps, null)(Person); 
