@@ -33,7 +33,7 @@ export class AddPersonForm extends Component {
   handleOnSubmit = event => { 
     const person = Object.assign({}, this.state);
     this.props.addPerson(person); 
-    this.props.history.push('/person-show')
+    this.props.history.push(`/people/${person.name}`)
     this.setState({
       name: '',
       description: '',

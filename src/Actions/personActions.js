@@ -25,10 +25,10 @@ export function addPerson(person){
   } 
 }  
 
-export function addReview(review){ 
+export function addReview(review, person){ 
   return function(dispatch){
     dispatch({type: 'ADD_REVIEW'})
-    return fetch('https://rateyouracquaintanceapi.herokuapp.com/people/${person.name}/reviews', {
+    return fetch(`https://rateyouracquaintanceapi.herokuapp.com/people/${person.id}/reviews`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

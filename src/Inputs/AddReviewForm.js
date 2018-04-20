@@ -30,8 +30,9 @@ export class AddReviewForm extends Component {
 
   handleOnSubmit = event => { 
     const review = Object.assign({}, this.state);
-    this.props.addReview(review); 
-    this.props.history.push('/people/${this.props.person.name}')
+    const person = this.props.person
+    this.props.addReview(review,person); 
+    this.props.history.push(`/people/${person.name}`)
     this.setState({
       description: '',
       star_rating:'', 

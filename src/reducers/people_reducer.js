@@ -1,5 +1,6 @@
 
-export function peopleReducer(state = {loading: true, person: "unfound"}, action) {
+export function peopleReducer(state = {loading: true, person: "unfound", 
+reviews: {}}, action) {
   switch (action.type) {
 
      case 'GET_PERSON': 
@@ -13,8 +14,8 @@ export function peopleReducer(state = {loading: true, person: "unfound"}, action
         currentPerson = action.payload 
        return {loading: false, person: currentPerson}; 
        case 'ADD_REVIEW': 
-       let review = action.payload 
-      return {loading: false, person: state.person.reviews.concat(review)};
+        let review = action.payload 
+        return {loading: false, reviews: state.person.reviews.concat(review)};
      default:
        return state; 
   }
