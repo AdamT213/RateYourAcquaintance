@@ -9,13 +9,13 @@ export class FormattedPerson extends Component {
     return <Review star_rating={review.star_rating} description={review.description} key={index} />});
     
       return( 
-        <div className= "App">
-          <li>Name: {this.props.name}</li> 
-          <li>Description: ${this.props.description}</li>  
-          <li>Location: {this.props.location}</li> 
+        <div className= "container">
+          <li>Name: {this.props.name}</li><br />
+          <li>Description: {this.props.description}</li><br /> 
+          <li>Location: {this.props.location}</li><br /> 
           <li>Reviews: <ul> 
             {reviews} 
-            </ul> </li> 
+            </ul> </li><br /> 
         </div>
       ); 
     }
