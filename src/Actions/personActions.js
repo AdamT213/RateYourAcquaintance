@@ -21,7 +21,13 @@ export function addPerson(person){
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(person)})
+    body: JSON.stringify(person),})
+    .then(res => {
+      return res.json()
+    }).then(responseJson => {
+      debugger;
+      dispatch({type: 'SET_PERSON', payload: responseJson}) 
+    })
   } 
 }  
 

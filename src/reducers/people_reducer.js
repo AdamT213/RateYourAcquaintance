@@ -10,9 +10,9 @@ reviews: {}}, action) {
      } else { 
       return  {loading: false, person: state.person}; 
      }
-      case 'ADD_PERSON': 
-        currentPerson = action.payload 
-       return {loading: false, person: currentPerson}; 
+      case 'SET_PERSON':  
+        currentPerson = action.payload;
+        return {loading: false, person: currentPerson}; 
        case 'ADD_REVIEW': 
         let review = action.payload 
         return {loading: false, reviews: state.person.reviews.concat(review)};

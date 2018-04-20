@@ -23,7 +23,7 @@ class App extends Component {
           <div> 
             <Navbar />
             <Route exact path='/' component={FindPersonForm}/> 
-            <Route path={'/people/'+ this.props.person.name} component={Person}/> 
+            <Route path='/person-show' component={Person}/> 
             <Route path='/add-person' component={AddPersonForm}/> 
           </div>
         </Router>
@@ -32,7 +32,7 @@ class App extends Component {
   }
 } 
 
-function mapStateToProps(state){
+function mapStateToProps(state){ 
   return {person: state.peopleReducer.person}
 }
 

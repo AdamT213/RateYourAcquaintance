@@ -32,8 +32,11 @@ export class AddPersonForm extends Component {
 
   handleOnSubmit = event => { 
     const person = Object.assign({}, this.state);
-    this.props.addPerson(person); 
-    this.props.history.push(`/people/${person.name}`)
+    debugger; 
+    //need to find a way to set loading state back to true in order to allow action to run before redirecting back. code below breaks, no clue why
+    this.store.getState().peopleReducer.loading = true
+    this.props.addPerson(person);   
+    this.props.history.push(`/person-show`)
     this.setState({
       name: '',
       description: '',

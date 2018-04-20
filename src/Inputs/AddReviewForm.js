@@ -32,7 +32,7 @@ export class AddReviewForm extends Component {
     const review = Object.assign({}, this.state);
     const person = this.props.person
     this.props.addReview(review,person); 
-    this.props.history.push(`/people/${person.name}`)
+    this.props.history.push(`/person-show`)
     this.setState({
       description: '',
       star_rating:'', 
