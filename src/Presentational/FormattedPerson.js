@@ -10,12 +10,12 @@ export class FormattedPerson extends Component {
     
       return( 
         <div className= "container">
-          <li>Name: {this.props.name}</li><br />
-          <li>Description: {this.props.description}</li><br /> 
-          <li>Location: {this.props.location}</li><br /> 
+          <p>Name: {this.props.name}</p><br />
+          <p>Description: {this.props.description}</p><br /> 
+          <p>Location: {this.props.location}</p><br /> 
           <li>Reviews: <ul> 
             {reviews} 
-            </ul> </li><br /> 
+            </ul></li><br /> 
         </div>
       ); 
     }

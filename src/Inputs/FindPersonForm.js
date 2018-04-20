@@ -30,7 +30,7 @@ export class FindPersonForm extends Component {
     event.preventDefault();
     const person = Object.assign({}, this.state);
     this.props.findPerson(person); 
-    this.props.history.push('/people/${person.name}')
+    this.props.history.push(`/people/${person.name}`)
     this.setState({
       name: '', 
     });
