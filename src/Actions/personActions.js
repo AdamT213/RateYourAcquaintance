@@ -23,4 +23,17 @@ export function addPerson(person){
     },
     body: JSON.stringify(person)})
   } 
-} 
+}  
+
+export function addReview(review){ 
+  return function(dispatch){
+    dispatch({type: 'ADD_REVIEW'})
+    return fetch('https://rateyouracquaintanceapi.herokuapp.com/people/${person.name}/reviews', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(review)})
+  } 
+}  
