@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { history } from '../App'
 
 export function findPerson(person){ 
   return function(dispatch){
@@ -26,10 +27,11 @@ export function addPerson(person){
       return res.json()
     }).then(responseJson => {
       dispatch({type: 'SET_PERSON', payload: responseJson}) 
-    })    
-    // }).then(res => { 
-    //   this.context.history.push(`/person-show`) 
-    // })
+    // })    
+    }).then(res => { 
+      debugger;
+      history.push(`/person-show`) 
+    })
   } 
 }  
 

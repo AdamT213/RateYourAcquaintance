@@ -8,7 +8,7 @@ import Person from './Components/Person';
 import Navbar from './Components/Navbar';
 
 import createBrowserHistory from 'history/createBrowserHistory';
-const history = createBrowserHistory();
+export const history = createBrowserHistory();
 
 
 class App extends Component {
