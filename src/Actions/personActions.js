@@ -25,9 +25,11 @@ export function addPerson(person){
     .then(res => {
       return res.json()
     }).then(responseJson => {
-      debugger;
       dispatch({type: 'SET_PERSON', payload: responseJson}) 
-    })
+    })    
+    // }).then(res => { 
+    //   this.context.history.push(`/person-show`) 
+    // })
   } 
 }  
 

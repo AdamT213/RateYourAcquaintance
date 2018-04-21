@@ -11,6 +11,7 @@ reviews: {}}, action) {
       return  {loading: false, person: state.person}; 
      }
       case 'SET_PERSON':  
+        debugger;
         currentPerson = action.payload;
         return {loading: false, person: currentPerson}; 
        case 'ADD_REVIEW': 
