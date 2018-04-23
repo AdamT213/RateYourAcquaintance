@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { AddPersonForm } from '../Inputs/AddPersonForm'; 
-import { AddReviewForm } from '../Inputs/AddReviewForm';
+import  AddReviewForm  from '../Inputs/AddReviewForm';
 import { FormattedPerson } from '../Presentational/FormattedPerson'; 
 import Loader from 'react-loader';
 import {

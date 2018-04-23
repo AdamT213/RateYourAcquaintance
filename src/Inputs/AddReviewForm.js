@@ -25,7 +25,7 @@ export class AddReviewForm extends Component {
     event.preventDefault();
     const review = Object.assign({}, this.state); 
     const person = this.props.person;
-    this.props.addReview(review,person); 
+    this.props.addReview(review, person); 
     this.setState({
       description: '',
       star_rating:'', 

@@ -42,8 +42,10 @@ export function addReview(review, person){
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(review)})
-    .then(responseJson => {
+    body: JSON.stringify(review)}) 
+    .then(res => {
+      return res.json()
+    }).then(responseJson => {
       dispatch({type: 'CONCAT_REVIEW', payload: responseJson}) 
     }).then(res => { 
       history.push(`/person-show`) 
