@@ -42,7 +42,8 @@ export class Person extends Component {
           </Link>
           <div>
           <Switch>
-            <Route path={`${this.props.match.url}/reviews/new`} component={AddReviewForm} />
+            <Route path={`${this.props.match.url}/reviews/new`} 
+            component={AddReviewForm} />
           </Switch> 
           </div> 
           </div>

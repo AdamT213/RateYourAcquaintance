@@ -26,10 +26,8 @@ export function addPerson(person){
     .then(res => {
       return res.json()
     }).then(responseJson => {
-      dispatch({type: 'SET_PERSON', payload: responseJson}) 
-    // })    
+      dispatch({type: 'SET_PERSON', payload: responseJson})     
     }).then(res => { 
-      debugger;
       history.push(`/person-show`) 
     })
   } 
@@ -45,5 +43,10 @@ export function addReview(review, person){
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(review)})
+    .then(responseJson => {
+      dispatch({type: 'CONCAT_REVIEW', payload: responseJson}) 
+    }).then(res => { 
+      history.push(`/person-show`) 
+    })  
   } 
 }  

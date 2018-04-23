@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from "react-router-dom";
 import { addReview } from '../Actions/personActions'; 
-import { Person } from '../Components/Person'
+
 
 
 export class AddReviewForm extends Component {
@@ -19,7 +12,7 @@ export class AddReviewForm extends Component {
       description: '',
       star_rating:'', 
     }
-  }
+  } 
 
   handleOnChange = event => {
     const { value, name } = event.target;
@@ -29,10 +22,10 @@ export class AddReviewForm extends Component {
   }
 
   handleOnSubmit = event => { 
-    const review = Object.assign({}, this.state);
-    const person = this.props.person
+    event.preventDefault();
+    const review = Object.assign({}, this.state); 
+    const person = this.props.person;
     this.props.addReview(review,person); 
-    this.props.history.push(`/person-show`)
     this.setState({
       description: '',
       star_rating:'', 
@@ -40,7 +33,7 @@ export class AddReviewForm extends Component {
   }
 
   render() { 
-
+      
       return (
         <div className="container">
           <div className="row">
@@ -49,7 +42,7 @@ export class AddReviewForm extends Component {
                 <div className="panel-body">
                   <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
                     <div className="form-group">
-                      <label htmlFor="name" className="col-md-4 control-label">Star_rating (0-5)</label>
+                      <label htmlFor="star_rating" className="col-md-4 control-label">Star Rating(0-5)</label>
                       <div className="col-md-5">
                         <input
                           className="form-control"
@@ -62,9 +55,8 @@ export class AddReviewForm extends Component {
                     <div className="form-group">
                       <label htmlFor="description" className="col-md-4 control-label">Description (Explain your rating)</label>
                       <div className="col-md-5">
-                        <input
+                        <textarea
                           className="form-control"
-                          type="text"
                           name="description"
                           value={this.state.description}
                           onChange={this.handleOnChange}

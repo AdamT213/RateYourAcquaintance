@@ -16,7 +16,7 @@ export class AddPersonForm extends Component {
   constructor(props) {
     super(props)
     this.state = { 
-      //initialize name to value that was just searched for to make UI cleaner
+      //TODO initialize name to value that was just searched for to make UI cleaner
       name: '',
       description: '',
       location:'', 
@@ -31,13 +31,10 @@ export class AddPersonForm extends Component {
   }
 
   handleOnSubmit = event => { 
+    debugger;
     const person = Object.assign({}, this.state); 
     event.preventDefault();
-    // debugger; 
-    //need to find a way to set loading state back to true in order to allow action to run before redirecting back. code below breaks, no clue why
-    //this.store.getState().peopleReducer.loading = true
     this.props.addPerson(person);   
-    // this.props.history.push(`/person-show`)
     this.setState({
       name: '',
       description: '',
@@ -72,9 +69,8 @@ export class AddPersonForm extends Component {
                     <div className="form-group">
                       <label htmlFor="description" className="col-md-4 control-label">Physical Description</label>
                       <div className="col-md-5">
-                        <input
+                        <textarea
                           className="form-control"
-                          type="text"
                           name="description"
                           value={this.state.description}
                           onChange={this.handleOnChange}
