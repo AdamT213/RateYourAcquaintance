@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signInUser } from '../actions/userActions';
+import { signInUser } from '../Actions/userActions';
 
 export class UserSignInForm extends Component {
 

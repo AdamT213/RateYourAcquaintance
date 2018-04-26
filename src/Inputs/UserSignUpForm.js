@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signUpUser } from '../actions/userActions';
+import { signUpUser } from '../Actions/userActions';
 
 export class UserSignUpForm extends Component {
 
@@ -21,7 +21,7 @@ export class UserSignUpForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const user = Object.assign({}, this.state, { id: uuid() });
+    const user = Object.assign({}, this.state);
     this.props.signUpUser(user);
     this.setState({
       email: '',
