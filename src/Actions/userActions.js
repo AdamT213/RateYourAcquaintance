@@ -12,23 +12,22 @@ export function signUpUser(user){
           },
           body: JSON.stringify({user: data}),
           }).then(res => { 
-            console.log(res)
             return res.json()
         }).then(responseJson => { 
-          console.log(responseJson)
-          dispatch({type: 'CREATE_SESSION', payload: responseJson}) 
+          dispatch({type: 'CREATE_SESSION', payload: user}) 
           return fetch('https://rateyouracquaintanceapi.herokuapp.com/auth_user/', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({user: data}), 
+          body: JSON.stringify({email: user.email, password: user.password}), 
           }).then(res => { 
             console.log(res)
             return res.json()
         }).then(responseJson => { 
-          console.log(responseJson)
+          console.log(responseJson) 
+          dispatch({type: 'SET_TOKEN', payload: responseJson})
       })
     })
   } 
@@ -45,10 +44,8 @@ export function signInUser(user){
         },
         body: JSON.stringify({email: user.email, password: user.password}),
         }).then(res => { 
-            console.log(res)
             return res.json()
           }).then(responseJson => {
-            console.log(responseJson)
             dispatch({type: 'SET_TOKEN', payload: responseJson})
     })
 }
