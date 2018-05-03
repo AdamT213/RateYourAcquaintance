@@ -46,6 +46,7 @@ export function addReview(review, person){
     return fetch(`https://rateyouracquaintanceapi.herokuapp.com/people/${person.id}/reviews`, {
     method: 'POST',
     headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
