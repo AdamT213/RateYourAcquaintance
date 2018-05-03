@@ -24,7 +24,8 @@ export function addPerson(person){
     dispatch({type: 'ADD_PERSON'})
     return fetch('https://rateyouracquaintanceapi.herokuapp.com/people', {
     method: 'POST',
-    headers: {
+    headers: { 
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
