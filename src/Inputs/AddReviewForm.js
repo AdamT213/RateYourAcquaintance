@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import { addReview } from '../Actions/personActions'; 
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 
 
 
@@ -30,9 +32,10 @@ export class AddReviewForm extends Component {
       description: '',
       star_rating:'', 
     });
-  }
+  } 
 
   render() { 
+
       
       return (
         <div className="container">
@@ -43,11 +46,14 @@ export class AddReviewForm extends Component {
                   <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
                     <div className="form-group">
                       <label htmlFor="star_rating" className="col-md-4 control-label">Star Rating(0-5)</label>
-                      <div className="col-md-5">
+                      <div className="col-md-5"> 
+                      {/* working on using rater as only input */}
+                        <Rater total={5} 
+                        rating={this.state.star_rating}/> 
                         <input
                           className="form-control"
                           name="star_rating"
-                          value={this.state.star_rating}
+                          value={this.state.star_rating}  
                           onChange={this.handleOnChange}
                         />
                       </div>

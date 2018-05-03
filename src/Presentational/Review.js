@@ -1,13 +1,16 @@
 import React, { Component } from 'react'; 
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 
 export class Review extends Component {  
     
   render() { 
-    //TODO Make star ratings appear with actual stars
     
       return( 
         <div className= "App">
-          <li>Star_Rating: {this.props.star_rating}</li> 
+          <Rater total={5} rating={this.props.star_rating} 
+          interactive={false}/>
+          {/* <li>Star_Rating: {this.props.star_rating}</li>  */}
           <li>Description: {this.props.description}</li>  
         </div>
       ); 
