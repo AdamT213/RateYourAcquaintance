@@ -48,10 +48,11 @@ export class AddReviewForm extends Component {
                       <label htmlFor="star_rating" className="col-md-4 control-label">Star Rating(0-5)</label>
                       <div className="col-md-5"> 
                       {/* working on using rater as only input */}
-                        {/* <Rater total={5} 
+                        {/* <Rater total={5}
+                        rating={this.onRate} 
                         name="star_rating" 
                         value= {this.rating}
-                         onChange={this.handleOnChange}/>  */} 
+                        onChange={this.handleOnChange.bind(this)}/> */}
                          <Rater total={5} rating= {this.state.star_rating} />
                         <input
                           className="form-control"
