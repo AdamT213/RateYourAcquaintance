@@ -14,7 +14,8 @@ export function signUpUser(user){
           }).then(res => { 
             return res.json()
         }).then(responseJson => { 
-          dispatch({type: 'CREATE_SESSION', payload: user}) 
+          dispatch({type: 'CREATE_SESSION', payload: user})  
+          //post to auth_user to retrieve JWT
           return fetch('https://rateyouracquaintanceapi.herokuapp.com/auth_user/', {
           method: 'POST',
           headers: {
@@ -27,6 +28,7 @@ export function signUpUser(user){
             return res.json()
         }).then(responseJson => { 
           console.log(responseJson) 
+          //call action to set current user and store token
           dispatch({type: 'SET_TOKEN', payload: responseJson})
       })
     })
@@ -36,6 +38,7 @@ export function signUpUser(user){
 export function signInUser(user){
     return function(dispatch){
         dispatch({type: 'SIGN_IN_USER', payload: user})
+        //post to auth_user to retrieve JWT
         return fetch('https://rateyouracquaintanceapi.herokuapp.com/auth_user', {
         method: 'POST',
         headers: {
@@ -46,6 +49,7 @@ export function signInUser(user){
         }).then(res => { 
             return res.json()
           }).then(responseJson => {
+            //call action to set current user and store token
             dispatch({type: 'SET_TOKEN', payload: responseJson})
     })
 }
