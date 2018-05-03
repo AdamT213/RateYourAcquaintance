@@ -21,6 +21,12 @@ export class AddReviewForm extends Component {
     this.setState({
       [name]: value, 
     });
+  } 
+
+  handleRate = event => { 
+    this.setState({ 
+      star_rating: this.rating,
+    }); 
   }
 
   handleOnSubmit = event => { 
@@ -48,11 +54,9 @@ export class AddReviewForm extends Component {
                       <label htmlFor="star_rating" className="col-md-4 control-label">Star Rating(0-5)</label>
                       <div className="col-md-5"> 
                       {/* working on using rater as only input */}
-                        {/* <Rater total={5}
-                        rating={this.onRate} 
-                        name="star_rating" 
-                        value= {this.rating}
-                        onChange={this.handleOnChange.bind(this)}/> */}
+                        {/* <Rater total={5} 
+                        rating={this.state.onRate} 
+                        onChange={this.handleRate.bind(this)}/> */}
                          <Rater total={5} rating= {this.state.star_rating} />
                         <input
                           className="form-control"
