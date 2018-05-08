@@ -1,5 +1,6 @@
 .App { 
-  background: #D3D3D3;
+  background: #D3D3D3; 
+  opacity: 0.95;
   margin-top: 50px;
   text-align: center; 
   height: 500px;
@@ -29,6 +30,17 @@ html {
 }
 
 .container { 
-  background: grey;
-  margin-top: 100px;
+  background: grey; 
+  opacity: 0.95;
+  margin-top: 100px; 
+  padding: 20px;
+} 
+
+.Review { 
+  background: #D3D3D3; 
+  opacity: 0.95;
+  margin-top: 50px;
+  text-align: center;
+  height: 100px; 
+  padding: 20px;
 }

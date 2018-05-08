@@ -7,12 +7,13 @@ export class Review extends Component {
   render() { 
     
       return( 
-        <div className= "App">
-          <Rater total={5} rating={this.props.star_rating} 
-          interactive={false}/>
-          {/* <li>Star_Rating: {this.props.star_rating}</li>  */}
-          <li>Description: {this.props.description}</li>  
-        </div>
+        // <div className= "App"> 
+          <div className= "Review">
+            <Rater total={5} rating={this.props.star_rating} 
+            interactive={false}/>
+            <li>{this.props.description}</li>   
+          </div>
+        // </div>
       ); 
     }
   }
