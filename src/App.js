@@ -4,8 +4,7 @@ import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux'
 import FindPersonForm from './Inputs/FindPersonForm'; 
 import AddPersonForm  from './Inputs/AddPersonForm'; 
-import UserSignUpForm from './Inputs/UserSignUpForm';
-import UserSignInForm from './Inputs/UserSignInForm';
+import UserSignInSignUpForm from './Inputs/UserSignInSignUpForm';
 import Person from './Components/Person'; 
 import Navbar from './Components/Navbar'; 
 
@@ -35,9 +34,8 @@ class App extends Component {
     } 
     else { 
       return ( 
-        <div>
-        <UserSignUpForm/>  
-        <UserSignInForm/> 
+        <div>  
+        <UserSignInSignUpForm/> 
         </div>
       )
     }

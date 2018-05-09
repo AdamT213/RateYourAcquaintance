@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signUpUser } from '../Actions/userActions';
+import { signInUser } from '../Actions/userActions'; 
+import { signUpUser } from '../Actions/userActions'; 
 
-export class UserSignUpForm extends Component {
+export class UserSignInSignUpForm extends Component {
 
   constructor(props) {
     super(props)
@@ -22,12 +23,22 @@ export class UserSignUpForm extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     const user = Object.assign({}, this.state);
+    this.props.signInUser(user);
+    this.setState({
+      email: '',
+      password: ''
+    });
+  } 
+
+  handleSignUp = event => {
+    event.preventDefault();
+    const user = Object.assign({}, this.state);
     this.props.signUpUser(user);
     this.setState({
       email: '',
       password: ''
     });
-  }
+  } 
 
   render() {
     return (
@@ -62,7 +73,13 @@ export class UserSignUpForm extends Component {
                   </div>
                   <div className="form-group">
                     <div className="col-md-6 col-md-offset-4">
-                      <button type="submit" className="btn btn-default">Sign Up</button>
+                      <button type="submit" className="btn btn-default">Sign In</button>
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <div className="col-md-6 col-md-offset-4">
+                      <button type="submit" className="btn btn-default"onClick= {this.handleSignUp}>Sign Up 
+                      </button>
                     </div>
                   </div>
                 </form>
@@ -75,4 +92,4 @@ export class UserSignUpForm extends Component {
   }
 }
 
-export default connect(null, { signUpUser })(UserSignUpForm);
+export default connect(null, { signInUser, signUpUser })(UserSignInSignUpForm);

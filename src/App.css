@@ -1,3 +1,8 @@
+html {
+  background: url("https://i.vimeocdn.com/video/534502243_1280x720.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
 .App { 
   background: #D3D3D3; 
   opacity: 0.95;
@@ -7,21 +12,33 @@
   padding: 20px;
 }
 
-html {
-  background: url("https://i.vimeocdn.com/video/534502243_1280x720.jpg") no-repeat center fixed;
-  background-size: cover;
-}
+.App-intro {
+  font-size: large;
+} 
 
 .App-title {
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
-} 
+button.btn.btn-default { 
+ margin: auto;
+}
 
 .col-md-5 { 
   padding: 10px;
+} 
+
+.col-md-6.col-md-offset-4 { 
+  text-align: center;
+  margin: 5px; 
+}
+
+.container { 
+  background: grey; 
+  opacity: 0.95;
+  text-align: center;
+  margin-top: 100px; 
+  padding: 20px;
 } 
 
 .navbar .link {
@@ -29,12 +46,6 @@ html {
   padding-right:10px;
 }
 
-.container { 
-  background: grey; 
-  opacity: 0.95;
-  margin-top: 100px; 
-  padding: 20px;
-} 
 
 .Review { 
   background: #D3D3D3; 
