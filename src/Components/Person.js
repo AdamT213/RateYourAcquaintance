@@ -32,10 +32,9 @@ export class Person extends Component {
     } else { 
 
       return ( 
-        <div>
-        <FormattedPerson name= {this.props.person.name} description= {this.props.person.description} location= {this.props.person.location} reviews= {this.props.person.reviews} 
-         /> 
-         <Router> 
+        <div> 
+          <div className= "container">
+          <Router> 
         <div>
           <Link to={`${this.props.match.url}/reviews/new`}>
               Add a New Review for this Person
@@ -47,8 +46,24 @@ export class Person extends Component {
           </Switch> 
           </div> 
           </div>
-          </Router>
+         </Router> 
          </div>
+        <FormattedPerson name= {this.props.person.name} description= {this.props.person.description} location= {this.props.person.location} reviews= {this.props.person.reviews} 
+         /> 
+         {/* <Router> 
+        <div>
+          <Link to={`${this.props.match.url}/reviews/new`}>
+              Add a New Review for this Person
+          </Link>
+          <div>
+          <Switch>
+            <Route path={`${this.props.match.url}/reviews/new`} 
+            component={AddReviewForm} />
+          </Switch> 
+          </div> 
+          </div>
+         </Router> */}
+        </div> 
       ); 
     }
   }

@@ -13,9 +13,9 @@ export class FormattedPerson extends Component {
           <p>Name: {this.props.name}</p><br />
           <p>Description: {this.props.description}</p><br /> 
           <p>Location: {this.props.location}</p><br /> 
-          <li>Reviews: <ul> 
+          <ul> 
             {reviews} 
-            </ul></li><br /> 
+          </ul><br /> 
         </div>
       ); 
     }
