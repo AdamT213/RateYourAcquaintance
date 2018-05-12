@@ -59,4 +59,10 @@ export function addReview(review, person){
       history.push(`/person-show`) 
     })  
   } 
-}  
+}   
+
+export function removePerson(){ 
+  return function(dispatch){
+   dispatch({type: 'CLEAR_PERSON'})
+ } 
+} 
