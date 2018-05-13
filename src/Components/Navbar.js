@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'; 
-import {removePerson} from './actions/personActions' 
+import {removePerson} from '../Actions/personActions' 
 
-const handleHomeNav = event => { 
-  event.preventDefault(); 
-  this.props.removePerson(); 
-}
 
-const NavBar = () => {
-  return (
-    <div className="navbar">
-      <NavLink className="link"
-      to="/"
-      exact 
-      onclick= {this.handleHomeNav}
-    >Home</NavLink> 
-    </div>
-  );
+class NavBar extends Component { 
+  
+  handleHomeNav = event => { 
+    event.stopPropagation();
+    this.props.removePerson(); 
+  }
+
+  render() {
+    return (
+      <div className="navbar">
+        <NavLink className="link"
+        onClick= {this.handleHomeNav}
+        to="/"
+        exact 
+      >Home</NavLink> 
+      </div>
+    ); 
+  }
 };
 
 export default connect(null, { removePerson })(NavBar);

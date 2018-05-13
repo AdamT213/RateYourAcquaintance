@@ -3,13 +3,13 @@ export function peopleReducer(state = {loading: true, person: "unfound",
 }, action) {
   switch (action.type) {
 
-     case 'GET_PERSON': 
-     let currentPerson = action.payload[0].find((person => person.name == action.payload[1].name)) 
-     if (currentPerson != undefined) { 
-      return {loading: false, person: currentPerson}; 
-     } else { 
-      return  {loading: false, person: state.person}; 
-     }
+      case 'GET_PERSON': 
+        let currentPerson = action.payload[0].find((person => person.name == action.payload[1].name)) 
+        if (currentPerson != undefined) { 
+        return {loading: false, person: currentPerson}; 
+        } else { 
+        return  {loading: false, person: state.person}; 
+        }
       case 'SET_PERSON':  
         currentPerson = action.payload;
         return {loading: false, person: currentPerson}; 
@@ -19,7 +19,7 @@ export function peopleReducer(state = {loading: true, person: "unfound",
         state.person.reviews = reviews
         return {loading: false, person: state.person}; 
       case 'CLEAR_PERSON': 
-        return {loading:false, person: "unfound"}
+        return {loading:true, person: "unfound"}
      default:
        return state; 
   }
