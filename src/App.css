@@ -54,4 +54,14 @@ button.btn.btn-default {
   text-align: center;
   height: 100px; 
   padding: 20px;
+} 
+
+@media only screen and (max-width: 250px) { 
+  .container {  
+    padding: 2%;
+  }  
+
+  .col-md-5 {  
+    padding: 2%;
+  }
 }
