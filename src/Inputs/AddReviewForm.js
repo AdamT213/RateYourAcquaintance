@@ -32,6 +32,7 @@ export class AddReviewForm extends Component {
   handleOnSubmit = event => { 
     event.preventDefault();
     const review = Object.assign({}, this.state); 
+    review.user_id = this.props.user_id 
     const person = this.props.person;
     this.props.addReview(review, person); 
     this.setState({
@@ -93,7 +94,7 @@ export class AddReviewForm extends Component {
   }
 
   function mapStateToProps(state){ 
-    return {person: state.peopleReducer.person}
+    return {person: state.peopleReducer.person, user_id: state.usersReducer.currentUser.id}
   }
 
 export default connect(mapStateToProps, { addReview })(AddReviewForm);
