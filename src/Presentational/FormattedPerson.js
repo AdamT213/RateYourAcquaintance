@@ -11,7 +11,6 @@ export class FormattedPerson extends Component {
 
       // function to find average star rating for a person, rounded off to two digits. Star ratings are still not saving as floats however, or at least not as fractional ratings
     var average_star_rating = function(){ 
-      debugger;
       let totalStars = 0.0
       reviews.forEach((review) => { 
         totalStars += review.props.star_rating 
