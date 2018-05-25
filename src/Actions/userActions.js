@@ -42,7 +42,8 @@ export function signUpUser(user){
 }
 
 export function signInUser(user){
-    return function(dispatch){
+    return function(dispatch){ 
+      let didError;
         dispatch({type: 'SIGN_IN_USER', payload: user})
         //post to auth_user to retrieve JWT
         return fetch('https://rateyouracquaintanceapi.herokuapp.com/auth_user', {
@@ -53,12 +54,20 @@ export function signInUser(user){
         },
         body: JSON.stringify({email: user.email, password: user.password}),
         }).then(res => { 
-            return res.json()
+            return res.json() 
           }).then(responseJson => {
-            //call action to set current user and store token
-            dispatch({type: 'SET_TOKEN', payload: responseJson})
-    }).then(res => { 
-      history.push(`/`) 
-    })
+            if (responseJson.errors) { 
+              alert(responseJson.errors) 
+              didError = true;
+            } 
+            else { 
+              //call action to set current user and store token
+              dispatch({type: 'SET_TOKEN', payload: responseJson}) 
+            } 
+            }).then(res => { 
+              if (!didError) {
+                history.push(`/`) 
+              }
+            }) 
 }
 }  
