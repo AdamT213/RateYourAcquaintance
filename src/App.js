@@ -25,7 +25,7 @@ class App extends Component {
             <div> 
               <Navbar />
               <Route exact path='/' component={FindPersonForm}/> 
-              <Route path='/person-show' component={Person}/> 
+              <Route path='/people/:id' component={Person}/> 
               <Route path='/add-person' component={AddPersonForm}/> 
             </div>
           </Router>

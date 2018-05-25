@@ -29,15 +29,14 @@ export class FindPersonForm extends Component {
   handleOnSubmit = event => { 
     event.preventDefault();
     const person = Object.assign({}, this.state);
-    this.props.findPerson(person); 
-    this.props.history.push(`/person-show`)
+    this.props.findPerson(person);  
     this.setState({
       name: '', 
     });
   }
 
   render() { 
-      
+
       return (
         <div className="container">
           <div className="row">
@@ -70,5 +69,6 @@ export class FindPersonForm extends Component {
       );
   }
 } 
+
 
 export default connect(null, { findPerson })(FindPersonForm);

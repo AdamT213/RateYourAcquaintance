@@ -9,7 +9,7 @@ export class FormattedPerson extends Component {
     const reviews =  this.props.reviews.map((review, index) => {
     return <Review star_rating={review.star_rating} description={review.description} key={index} />});  
 
-      // function to find average star rating for a person, rounded off to two digits. Star ratings are still not saving as floats however, or at least not as fractional ratings
+      // function to find average star rating for a person, rounded off to two digits. Star ratings can only have fractional part in read-only mode. Possible PR in React Rater to come.
     var average_star_rating = function(){ 
       let totalStars = 0.0
       reviews.forEach((review) => { 

@@ -7,6 +7,7 @@ import './index.css';
 import rootReducer from './reducers';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { FindPersonForm } from './Inputs/FindPersonForm';
 
 export const store = createStore(
   rootReducer,
@@ -19,7 +20,7 @@ export const store = createStore(
 
 ReactDOM.render(
 <Provider store={store}> 
-    <App /> 
+    <App />  
 </Provider>,
 document.getElementById('root'));
 

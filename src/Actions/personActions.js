@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch';
 import { history } from '../App'
 
 export function findPerson(person){ 
-  return function(dispatch){
+  return function(dispatch, getState){
    dispatch({type: 'LOADING_PEOPLE'})
    return fetch('https://rateyouracquaintanceapi.herokuapp.com/people', {
     method: 'GET',
@@ -15,12 +15,14 @@ export function findPerson(person){
        return res.json()
      }).then(responseJson => {
        dispatch({type: 'GET_PERSON', payload: [responseJson, person]}) 
-     })
+     }).then(res => { 
+      history.push(`/people/${getState().peopleReducer.person.id}`) 
+    })
  } 
 } 
 
 export function addPerson(person){ 
-  return function(dispatch){
+  return function(dispatch, getState){
     dispatch({type: 'ADD_PERSON'})
     return fetch('https://rateyouracquaintanceapi.herokuapp.com/people', {
     method: 'POST',
@@ -35,13 +37,13 @@ export function addPerson(person){
     }).then(responseJson => {
       dispatch({type: 'SET_PERSON', payload: responseJson})     
     }).then(res => { 
-      history.push(`/person-show`) 
+      history.push(`/people/${getState().peopleReducer.person.id}`) 
     })
   } 
 }  
 
 export function addReview(review, person){ 
-  return function(dispatch){
+  return function(dispatch, getState){
     dispatch({type: 'ADD_REVIEW'})
     return fetch(`https://rateyouracquaintanceapi.herokuapp.com/people/${person.id}/reviews`, {
     method: 'POST',
@@ -56,7 +58,7 @@ export function addReview(review, person){
     }).then(responseJson => {
       dispatch({type: 'CONCAT_REVIEW', payload: responseJson}) 
     }).then(res => { 
-      history.push(`/person-show`) 
+      history.push(`/people/${getState().peopleReducer.person.id}`) 
     })  
   } 
 }   
