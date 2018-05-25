@@ -9,6 +9,7 @@ import Person from './Components/Person';
 import Navbar from './Components/Navbar'; 
 
 import createBrowserHistory from 'history/createBrowserHistory';
+import { Redirect } from 'react-router';
 export const history = createBrowserHistory();
 
 
@@ -34,9 +35,12 @@ class App extends Component {
     } 
     else { 
       return ( 
-        <div>  
-        <UserSignInSignUpForm/> 
-        </div>
+        <Router history= {history}>
+          <div>
+            <Redirect to= '/signin'/> 
+            <Route path='/signin' component={UserSignInSignUpForm}/>
+          </div>
+        </Router>
       )
     }
   }
