@@ -103,4 +103,11 @@ export class AddPersonForm extends Component {
       ); 
     }
   }
-export default connect(null, { addPerson })(AddPersonForm);
+
+  const mapDispatchToProps = () => {
+    return {
+      addPerson: addPerson
+    };
+  };
+
+export default connect(null, mapDispatchToProps)(AddPersonForm);

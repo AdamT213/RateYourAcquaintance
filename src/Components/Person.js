@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { AddPersonForm } from '../Inputs/AddPersonForm'; 
 import  AddReviewForm  from '../Inputs/AddReviewForm';
 import { FormattedPerson } from '../Presentational/FormattedPerson'; 
-import Loader from 'react-loader';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,12 +14,6 @@ import {
 export class Person extends Component { 
      
   render() { 
-
-    if (this.props.loading) { 
-      return (
-        <Loader />
-      )
-    }
 
     if (this.props.person == "unfound") { 
       return ( 
@@ -39,8 +32,9 @@ export class Person extends Component {
           <Link to={`${this.props.match.url}/reviews/new`}>
               Add a New Review for this Person
           </Link><br />
-          <Link to="/add-person" replace
-              >Not the {this.props.person.name} you were looking for? Add them to our system! </Link>
+          <Link to='/add-person'
+              >Not the {this.props.person.name} you were looking for? Add them to our system! 
+          </Link>
           <div>
           <Switch>
             <Route path={`${this.props.match.url}/reviews/new`} 
@@ -60,7 +54,7 @@ export class Person extends Component {
 } 
 
 function mapStateToProps(state){ 
-  return {person: state.peopleReducer.person, loading: state.peopleReducer.loading}
+  return {person: state.peopleReducer.person}
 }
 
 export default connect(mapStateToProps, null)(Person); 
