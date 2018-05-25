@@ -4,11 +4,13 @@ export function peopleReducer(state = {loading: true, person: "unfound",
   switch (action.type) {
 
       case 'GET_PERSON': 
-        let currentPerson = action.payload[0].find((person => person.name == action.payload[1].name)) 
-        if (currentPerson != undefined) { 
-        return {loading: false, person: currentPerson}; 
+        let currentPerson = action.payload[0].filter((person => person.name == action.payload[1].name)) 
+        if (currentPerson != undefined && currentPerson.length === 1) { 
+          return {loading: false, person: currentPerson[0]}; 
+        } else if (currentPerson.length > 1) { 
+          return {loading: false, person: "nameOverlap"};
         } else { 
-        return  {loading: false, person: state.person}; 
+          return  {loading: false, person: state.person}; 
         }
       case 'SET_PERSON':  
         currentPerson = action.payload;
@@ -19,7 +21,7 @@ export function peopleReducer(state = {loading: true, person: "unfound",
         state.person.reviews = reviews
         return {loading: false, person: state.person}; 
       case 'CLEAR_PERSON': 
-        return {loading:true, person: "unfound"}
+        return {loading: true, person: "unfound"}
      default:
        return state; 
   }

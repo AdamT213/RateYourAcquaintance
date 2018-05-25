@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import Review from './Review'; 
-import Rater from 'react-rater'
+import Rater from 'react-rater'; 
 
 export class FormattedPerson extends Component {  
     
@@ -24,7 +24,7 @@ export class FormattedPerson extends Component {
           <p>Description: {this.props.description}</p><br /> 
           <p>Location: {this.props.location}</p><br />  
           <p>Average Star Rating: <Rater total={5} rating={average_star_rating()}
-          interactive={false}/> {average_star_rating()}</p>
+          interactive={false}/> {average_star_rating()}</p> 
           <ul> 
             {reviews} 
           </ul><br /> 

@@ -16,7 +16,14 @@ export function findPerson(person){
      }).then(responseJson => {
        dispatch({type: 'GET_PERSON', payload: [responseJson, person]}) 
      }).then(res => { 
-      history.push(`/people/${getState().peopleReducer.person.id}`) 
+       let currentPerson = getState().peopleReducer.person
+       if (currentPerson.id || currentPerson === "unfound") {
+        history.push(`/people/${currentPerson.id}`)  
+       } 
+       else { 
+         debugger;
+        history.push(`/people/`)
+       }
     })
  } 
 } 

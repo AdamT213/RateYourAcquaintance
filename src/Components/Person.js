@@ -38,11 +38,14 @@ export class Person extends Component {
         <div>
           <Link to={`${this.props.match.url}/reviews/new`}>
               Add a New Review for this Person
-          </Link>
+          </Link><br />
+          <Link to="/add-person" replace
+              >Not the {this.props.person.name} you were looking for? Add them to our system! </Link>
           <div>
           <Switch>
             <Route path={`${this.props.match.url}/reviews/new`} 
-            component={AddReviewForm} />
+            component={AddReviewForm} /> 
+            <Route path='/add-person' component={AddPersonForm}/>
           </Switch> 
           </div> 
           </div>
@@ -50,19 +53,6 @@ export class Person extends Component {
          </div>
         <FormattedPerson name= {this.props.person.name} description= {this.props.person.description} location= {this.props.person.location} reviews= {this.props.person.reviews} 
          /> 
-         {/* <Router> 
-        <div>
-          <Link to={`${this.props.match.url}/reviews/new`}>
-              Add a New Review for this Person
-          </Link>
-          <div>
-          <Switch>
-            <Route path={`${this.props.match.url}/reviews/new`} 
-            component={AddReviewForm} />
-          </Switch> 
-          </div> 
-          </div>
-         </Router> */}
         </div> 
       ); 
     }
