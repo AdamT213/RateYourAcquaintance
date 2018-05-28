@@ -31,9 +31,9 @@ export class AddPersonForm extends Component {
   }
 
   handleOnSubmit = event => { 
+    debugger;
     const person = Object.assign({}, this.state); 
     event.preventDefault();
-    //mapdispatchtoprops not working when linking to this component
     this.props.addPerson(person);   
     this.setState({
       name: '',
