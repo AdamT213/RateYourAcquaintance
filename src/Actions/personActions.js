@@ -21,7 +21,6 @@ export function findPerson(person){
         history.push(`/people/${currentPerson.id}`)  
        } 
        else { 
-         debugger;
         history.push(`/people/`)
        }
     })
@@ -44,7 +43,13 @@ export function addPerson(person){
     }).then(responseJson => {
       dispatch({type: 'SET_PERSON', payload: responseJson})     
     }).then(res => { 
-      history.push(`/people/${getState().peopleReducer.person.id}`) 
+      let currentPerson = getState().peopleReducer.person
+       if (currentPerson.id || currentPerson === "unfound") {
+        history.push(`/people/${currentPerson.id}`)  
+       } 
+       else { 
+        history.push(`/people/`)
+       } 
     })
   } 
 }  
@@ -73,5 +78,26 @@ export function addReview(review, person){
 export function removePerson(){ 
   return function(dispatch){
    dispatch({type: 'CLEAR_PERSON'})
+ } 
+} 
+
+export function setPersonById(personId){ 
+  return function(dispatch, getState){
+    dispatch({type: 'LOADING_PEOPLE'})
+    return fetch('https://rateyouracquaintanceapi.herokuapp.com/people', {
+     method: 'GET',
+     headers: {
+       Authorization: `Bearer ${localStorage.getItem("token")}`,
+       Accept: 'application/json',
+       'Content-Type': 'application/json'
+    },
+    }) .then(res => { 
+        return res.json()
+      }).then(responseJson => {
+        dispatch({type: 'SET_PERSON_BY_ID', payload: [responseJson, personId]}) 
+      }).then(res => { 
+        let currentPerson = getState().peopleReducer.person 
+        history.push(`/people/${currentPerson.id}`)
+      })
  } 
 } 

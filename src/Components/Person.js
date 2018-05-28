@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { AddPersonForm } from '../Inputs/AddPersonForm'; 
+import  AddPersonForm  from '../Inputs/AddPersonForm'; 
 import  AddReviewForm  from '../Inputs/AddReviewForm';
 import { FormattedPerson } from '../Presentational/FormattedPerson'; 
+import { history } from '../App'
 import {
   BrowserRouter as Router,
   Route,
@@ -27,7 +28,7 @@ export class Person extends Component {
       return ( 
         <div> 
           <div className= "container">
-          <Router> 
+          <Router history= {history}> 
         <div>
           <Link to={`${this.props.match.url}/reviews/new`}>
               Add a New Review for this Person

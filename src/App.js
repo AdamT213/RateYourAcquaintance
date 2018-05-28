@@ -4,12 +4,13 @@ import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux'
 import FindPersonForm from './Inputs/FindPersonForm'; 
 import AddPersonForm  from './Inputs/AddPersonForm'; 
-import UserSignInSignUpForm from './Inputs/UserSignInSignUpForm';
+import PeopleSearch from './Components/PeopleSearch'
+import UserSignInSignUpForm from './Inputs/UserSignInSignUpForm'; 
 import Person from './Components/Person'; 
 import Navbar from './Components/Navbar'; 
-
 import createBrowserHistory from 'history/createBrowserHistory';
 import { Redirect } from 'react-router';
+
 export const history = createBrowserHistory();
 
 
@@ -28,6 +29,7 @@ class App extends Component {
               <Route exact path='/' component={FindPersonForm}/> 
               <Route path='/people/:id' component={Person}/> 
               <Route path='/add-person' component={AddPersonForm}/> 
+              <Route exact path='/people' component={PeopleSearch}/>
             </div>
           </Router>
         </div>
