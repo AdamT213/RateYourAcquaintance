@@ -31,7 +31,6 @@ export class AddPersonForm extends Component {
   }
 
   handleOnSubmit = event => { 
-    debugger;
     const person = Object.assign({}, this.state); 
     event.preventDefault();
     this.props.addPerson(person);   
@@ -104,10 +103,4 @@ export class AddPersonForm extends Component {
     }
   }
 
-  const mapDispatchToProps = () => {
-    return {
-      addPerson: addPerson
-    };
-  };
-
-export default connect(null, mapDispatchToProps)(AddPersonForm);
+export default connect(null, { addPerson })(AddPersonForm);

@@ -28,7 +28,7 @@ export function findPerson(person){
 } 
 
 export function addPerson(person){ 
-  return function(dispatch, getState){
+  return function(dispatch, getState){ 
     dispatch({type: 'ADD_PERSON'})
     return fetch('https://rateyouracquaintanceapi.herokuapp.com/people', {
     method: 'POST',
