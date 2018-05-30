@@ -18,18 +18,32 @@ export class FormattedPerson extends Component {
       return (totalStars/parseFloat(reviews.length)).toFixed(2)
     }
     
-      return( 
-        <div className= "container">
-          <p>Name: {this.props.name}</p><br />
-          <p>Description: {this.props.description}</p><br /> 
-          <p>Location: {this.props.location}</p><br />  
-          <p>Average Star Rating: <Rater total={5} rating={average_star_rating()}
-          interactive={false}/> {average_star_rating()}</p> 
-          <ul> 
-            {reviews} 
-          </ul><br /> 
-        </div>
-      ); 
+      if (isNaN(average_star_rating())) { 
+        debugger;
+        return( 
+          <div className= "container">
+            <p>Name: {this.props.name}</p><br />
+            <p>Description: {this.props.description}</p><br /> 
+            <p>Location: {this.props.location}</p><br /> 
+            <p> No reviews for this person yet</p><br /> 
+          </div>
+        ); 
+      }
+
+      else {
+        return( 
+          <div className= "container">
+            <p>Name: {this.props.name}</p><br />
+            <p>Description: {this.props.description}</p><br /> 
+            <p>Location: {this.props.location}</p><br /> 
+            <p>Average Star Rating: <Rater total={5} rating={average_star_rating()}
+            interactive={false}/> {average_star_rating()}</p> 
+            <ul> 
+              {reviews} 
+            </ul><br /> 
+          </div>
+        ); 
+      }
     }
   }
 

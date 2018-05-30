@@ -3,6 +3,13 @@ html {
   background-size: cover;
 }
 
+a:link, a:visited {
+  color: blue;
+}
+a:hover {
+  color: black;
+}
+
 .App { 
   background: #D3D3D3; 
   opacity: 0.95;
@@ -27,6 +34,10 @@ body {
 
 button.btn.btn-default { 
  margin: auto;
+}
+
+button:hover { 
+  background: #D3D3D3;
 }
 
 .col-md-5 { 
